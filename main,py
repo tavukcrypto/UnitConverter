@@ -1,0 +1,22 @@
+def convert_temperature(temp, from_unit, to_unit):
+    if from_unit == "C" and to_unit == "F":
+        converted_temp = (temp * 9/5) + 32
+    elif from_unit == "F" and to_unit == "C":
+        converted_temp = (temp - 32) * 5/9
+    else:
+        print("Invalid temperature units.")
+        return None
+    return converted_temp
+
+def main():
+    print("Welcome to the Unit Converter!")
+    temperature = float(input("Enter the temperature: "))
+    from_unit = input("Enter the unit to convert from (C/F): ").upper()
+    to_unit = input("Enter the unit to convert to (C/F): ").upper()
+
+    converted_temperature = convert_temperature(temperature, from_unit, to_unit)
+    if converted_temperature is not None:
+        print(f"The converted temperature is: {converted_temperature} {to_unit}")
+
+if __name__ == "__main__":
+    main()
